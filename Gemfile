@@ -42,4 +42,6 @@ end
 group :test do
   gem 'database_cleaner'
   gem 'launchy'
+  gem 'mutant-rspec', git: 'https://github.com/mbj/mutant.git'
+  gem 'coveralls', require: false
 end

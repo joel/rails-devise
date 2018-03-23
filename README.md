@@ -1,6 +1,17 @@
 Rails Devise
 ================
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/b555e20a16d6c8776959/maintainability)](https://codeclimate.com/github/joel/rails-devise/maintainability)
+
+[![Dependency Status](https://gemnasium.com/joel/rails-devise.svg)](https://gemnasium.com/joel/rails-devise)
+
+[![Build Status](https://travis-ci.org/joel/rails-devise.svg?branch=master)](https://travis-ci.org/joel/rails-devise) (Travis CI)
+
+[![Coverage Status](https://coveralls.io/repos/joel/rails-devise/badge.svg?branch=master&service=github)](https://coveralls.io/github/joel/rails-devise?branch=master)
+
+[![Inline docs](http://inch-ci.org/github/joel/rails-devise.svg?branch=master)](http://inch-ci.org/github/joel/rails-devise)
+
+
 This application was generated with the [rails_apps_composer](https://github.com/RailsApps/rails_apps_composer) gem
 provided by the [RailsApps Project](http://railsapps.github.io/).
 
