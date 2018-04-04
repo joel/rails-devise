@@ -1,9 +1,40 @@
 language: ruby
+group: stable
+dist: trusty
+os: linux
+
+before_install: gem install bundler -v 1.16.1
+
+# Trying to FIX
+# Selenium::WebDriver::Error::WebDriverError:
+#        Unable to find Mozilla geckodriver
+# On Travis-CI
+# First attempt without success
+# https://docs.travis-ci.com/user/gui-and-headless-browsers/
+
+# env:
+#   - MOZ_HEADLESS=1
+# addons:
+#   firefox: latest
+
+# Second attempt without success
+# https://docs.travis-ci.com/user/sauce-connect/
+
+# Finally find that, and it's works for now, moving on.
+# https://github.com/seleniumhq/selenium/issues/3236
+# https://github.com/natritmeyer/site_prism/pull/186/files
+before_script:
+  - wget https://github.com/mozilla/geckodriver/releases/download/v0.18.0/geckodriver-v0.18.0-linux64.tar.gz
+  - mkdir geckodriver
+  - tar -xzf geckodriver*.tar.gz -C geckodriver
+  - export PATH=$PATH:$PWD/geckodriver DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
 script: bundle exec rspec
+
 rvm:
   - 2.5.0
   - ruby-head
-before_install: gem install bundler -v 1.16.1
+
 matrix:
   allow_failures:
     - rvm: ruby-head
